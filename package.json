@@ -9,15 +9,41 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:extension.helloWorld",
+    "onCommand:itemClick"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "vsc-terminal-catalog.helloWorld",
-        "title": "Hello World"
+    "configuration":{
+      "title": "vsc-terminal-catalog",
+      "properties": {
+        "vsc-terminal-catalog.catalog-file":{
+          "type": "string",
+          "default": "terminals.json",
+          "description": "终端列表配置文件"
+        }
       }
-    ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vsc-terminal-catalog-bar",
+          "title": "terminal catalog bar",
+          "icon": "resources/console.svg"
+        }
+      ]
+    },
+    "views": {
+      "vsc-terminal-catalog-bar": [
+        {
+          "id": "vsc-terminal-catalog-treeView",
+          "name": "terminal treeView",
+          "when": ""
+        }
+      ]
+    },
+    "commands": [ ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
