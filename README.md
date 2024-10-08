@@ -4,6 +4,18 @@ terminal 目录管理
 
 ## Features
 
+## Install
+```bash
+git clone https://github.com/argszero/vsc-terminal-catalog.git
+npm install
+npm install -g @vscode/vsce  
+vsce package
+# vsc-terminal-catalog-0.0.1.vsix will be generated
+
+open extensions in vscode, select install from VSIX ...
+
+```
+
 
 ## Requirements
 
